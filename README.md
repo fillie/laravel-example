@@ -17,7 +17,7 @@ docker-compose up
 
 In practice, this will use the `docker-compose.yml` file inside of the project, and spin up a environment using the various config options specified.
 
-Once the script has finished it's set-up, you should now be able to access the project using: [http://localhost:3000/](http://localhost:3000/).
+Once the script has finished it's set-up, you should now be able to access the project using: [http://localhost/](http://localhost/).
 
 
 ## Inside the Container
@@ -29,13 +29,13 @@ Should you need to be inside of the docker container, for example to run artisan
 Due to the way Docker has been set-up using this project, we can run commands from outside the container if we attach a clever prefix before running a command:
 
 ```
-docker-compose exec laravel-example
+docker-compose exec app
 ```
 
 For example, to get the version of laravel which is installed, we can do:
 
 ```
-docker-compose exec laravel-example php artisan --version
+docker-compose exec app php artisan --version
 ```
 
 **Option 2 - Into the Image**
