@@ -17,3 +17,7 @@ You do not need to worry about authenticating users, and should assume a user is
 ## Bonus
 
 When an invite is created, we can trigger a laravel event. Inside of the event listener, we should be able to fire some code which could send an email, an SMS, or both to an invitee (don't worry we don't expect to see actual email or sms intergation, just where you might include it).
+
+Feel free to style the views you create in any way possible, accessibility is also something to think about.
+
+PHP unit testing would also be a nice to have.
