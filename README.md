@@ -69,6 +69,8 @@ Whilst we would like to see some styling of the form, this is not a priority, an
 
 ### Other Objectives
 
+Whilst the above is the most important task as it allows us to assess your code, we'd also like you to have a go at some of the following.
+
 * **Addition of unit tests**
 * **Well thought out database schema changes**
 * **Code Quality checks**
