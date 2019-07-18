@@ -1,6 +1,6 @@
-# Laravel Example Project
+# Laravel Example and Test Project
 
-The purpose of this project is to quickly load a skeleton version of Laravel (v5.7.19), which has been configured to use Docker for quick start up. Interally we're using Nginx and MariaDB, simply for ease of use.
+The purpose of this project is to quickly load a skeleton version of Laravel (v5.7.19), which has been configured to use Docker for quick start up. Interally we're using Nginx and Mysql, simply for ease of use. The bottom of this readme also contains some tasks, useful for interviewing.
 
 
 ## Getting Started
@@ -12,17 +12,17 @@ This project uses Docker to configure local environments, it should contain ever
 A local environment can be quickly booted up by navigating to the project directory, and running:
 
 ```
-docker-compose up
+./scripts/start.sh
 ``` 
 
-In practice, this will use the `docker-compose.yml` file inside of the project, and spin up a environment using the various config options specified.
+In practice, this will call `docker-compose up` and some other added commands when needed. The script should install any node, and php dependencies for you. As well as generating encyryption keys and running the initial database migrations for you.
 
-Once the script has finished it's set-up, you should now be able to access the project using: [http://localhost/](http://localhost/).
+Once the script has finished it's set-up (once the database migrations are complete), you should now be able to access the project using: [http://localhost/](http://localhost/).
 
 
 ## Inside the Container
 
-Should you need to be inside of the docker container, for example to run artisan commands, or composer commands, this can be done using some more docker commands.
+Should you need to be inside of the docker container, for example to run artisan commands, or composer commands, this can be done using some more docker commands. By default this project will actually create three containers, one to run nginx (`nginx`), one to run a mysql database (`db`), and one finally run php-fpm (`app`). It is the latter you're most likely to be interested in.
 
 **Option 1 - Outside In**
 
@@ -53,3 +53,24 @@ docker exec -it <YOUR_CONTAINER_ID> bash
 ```
 
 You should now be inside of your web server, this is the equivalent of SSH-ing into a real server. From this point you should be able to run any commands you would on any other server.
+
+## Your Task
+
+You have been tasked by a customer to create a contact form for their buisness. The contact form is to to capture the following details from
+the user:
+**Firstname**
+**Surname**
+**Email**
+**Telephone**
+**Address**
+
+All of this information should be saved and viewable in a database.
+Whilst we would like to see some styling of the form, this is not a priority, and you won't be judged on aesthetics.
+
+### Other Objectives
+**Addition of unit tests**
+**Well thought out database schema changes**
+**Code Quality checks**
+
+Please treat this task as if it was a real project, as such the project should be set up as a git repo, as well as containing a suitable
+branching method. Don't worry about setting this up so it pushes remotely, a local repo is fine.
