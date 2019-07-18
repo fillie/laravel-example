@@ -15,7 +15,7 @@ A local environment can be quickly booted up by navigating to the project direct
 ./scripts/start.sh
 ``` 
 
-In practice, this will call `docker-compose up` and some other added commands when needed. The script should install any node, and php dependencies for you. As well as generating encyryption keys and running the initial database migrations for you.
+In practice, this will call `docker-compose up` and some other added commands when needed. The script should install any npm and php dependencies for you. As well as generating encyryption keys and running any required database migrations for you.
 
 Once the script has finished it's set-up (once the database migrations are complete), you should now be able to access the project using: [http://localhost/](http://localhost/).
 
@@ -40,13 +40,13 @@ docker-compose exec app php artisan --version
 
 **Option 2 - Into the Image**
 
-First, using a new terminal window, lookup all running docker processes:
+First, using a new terminal window, lookup all running docker contaisner:
 
 ```
 docker ps 
 ```
 
-From here, you should copy the Container ID of the web server process which is running, and use the following command, substituting in your ID:
+From here, you should copy the Container ID of the php-fpm (app) process which is running, and use the following command, substituting in your ID:
 
 ```
 docker exec -it <YOUR_CONTAINER_ID> bash
@@ -68,6 +68,7 @@ All of this information should be saved and viewable in a database.
 Whilst we would like to see some styling of the form, this is not a priority, and you won't be judged on aesthetics.
 
 ### Other Objectives
+
 **Addition of unit tests**
 **Well thought out database schema changes**
 **Code Quality checks**
