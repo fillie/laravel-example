@@ -58,20 +58,20 @@ You should now be inside of your web server, this is the equivalent of SSH-ing i
 
 You have been tasked by a customer to create a contact form for their buisness. The contact form is to to capture the following details from
 the user:
-**Firstname**
-**Surname**
-**Email**
-**Telephone**
-**Address**
+* **Firstname**
+* **Surname**
+* **Email**
+* **Telephone**
+* **Address**
 
 All of this information should be saved and viewable in a database.
 Whilst we would like to see some styling of the form, this is not a priority, and you won't be judged on aesthetics.
 
 ### Other Objectives
 
-**Addition of unit tests**
-**Well thought out database schema changes**
-**Code Quality checks**
+* **Addition of unit tests**
+* **Well thought out database schema changes**
+* **Code Quality checks**
 
 Please treat this task as if it was a real project, as such the project should be set up as a git repo, as well as containing a suitable
 branching method. Don't worry about setting this up so it pushes remotely, a local repo is fine.
