@@ -1,4 +1,4 @@
-FROM php:7.2-fpm
+FROM php:7.3-fpm-stretch
 
 # Copy composer.lock and composer.json
 COPY composer.lock composer.json /var/www/
@@ -9,14 +9,14 @@ WORKDIR /var/www
 # Install dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
-    mysql-client \
     libpng-dev \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
     locales \
     zip \
+    libzip-dev \
     jpegoptim optipng pngquant gifsicle \
-    vim \
+    nano \
     unzip \
     git \
     curl
@@ -35,6 +35,12 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Add user for laravel application
 RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
+
+# Install Node
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+RUN apt-get install --yes nodejs
+RUN node -v
+RUN npm -v
 
 # Copy existing application directory contents
 COPY . /var/www
