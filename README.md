@@ -63,6 +63,7 @@ the user:
 * **Email**
 * **Telephone**
 * **Address**
+* **A Message**
 
 All of this information should be saved and viewable in a database.
 Whilst we would like to see some styling of the form, this is not a priority, and you won't be judged on aesthetics.
